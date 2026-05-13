@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GooRoom - 대시보드</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard-layout">
+    <header class="topbar">
+      <div class="logo">◈ GooRoom</div>
+      <div class="user-info">
+        <span>김강사 (Owner)</span>
+        <div class="avatar">K</div>
+        <a href="index.html" style="color: var(--v-text-muted);">로그아웃</a>
+      </div>
+    </header>
+    
+    <main class="dashboard-content">
+      <div class="dashboard-header">
+        <h2>내 강의실</h2>
+        <div class="action-buttons">
+          <button class="btn-secondary" onclick="location.href='join-room.html'">+ 강의실 참가하기</button>
+          <button class="btn-primary" onclick="location.href='create-room.html'">+ 강의실 만들기</button>
+        </div>
+      </div>
+      
+      <div class="room-grid">
+        <div class="room-card" onclick="location.href='room.html'">
+          <div class="room-title">React 심화 스터디</div>
+          <div class="room-meta">
+            <span class="room-role role-owner">Owner</span>
+            <span>12명 참여중</span>
+          </div>
+          <div class="room-meta">
+            <span>마지막 활동: 10분 전</span>
+          </div>
+        </div>
+        
+        <div class="room-card" onclick="location.href='room.html'">
+          <div class="room-title">알고리즘 실습반 A</div>
+          <div class="room-meta">
+            <span class="room-role role-owner">Owner</span>
+            <span>8명 참여중</span>
+          </div>
+          <div class="room-meta">
+            <span>마지막 활동: 1시간 전</span>
+          </div>
+        </div>
+        
+        <div class="room-card" onclick="location.href='room.html'">
+          <div class="room-title">JavaScript 기초 멘토링</div>
+          <div class="room-meta">
+            <span class="room-role role-owner">Owner</span>
+            <span>3명 참여중</span>
+          </div>
+          <div class="room-meta">
+            <span>마지막 활동: 3시간 전</span>
+          </div>
+        </div>
+        
+        <div class="room-card" onclick="location.href='room.html'">
+          <div class="room-title">타입스크립트 특강</div>
+          <div class="room-meta">
+            <span class="room-role role-user">User</span>
+            <span>25명 참여중</span>
+          </div>
+          <div class="room-meta">
+            <span>마지막 활동: 5분 전</span>
+          </div>
+        </div>
+        
+        <div class="room-card" onclick="location.href='room.html'">
+          <div class="room-title">1:1 프론트엔드 멘토링</div>
+          <div class="room-meta">
+            <span class="room-role role-editor">Editor</span>
+            <span>2명 참여중</span>
+          </div>
+          <div class="room-meta">
+            <span>마지막 활동: 어제</span>
+          </div>
+        </div>
+        
+        <!-- 빈 카드: 새 강의실 추가 유도 -->
+        <div class="room-card" style="border-style: dashed; display: flex; align-items: center; justify-content: center; min-height: 120px;" onclick="location.href='create-room.html'">
+          <span style="color: var(--v-text-muted);">+ 새 강의실 만들기</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

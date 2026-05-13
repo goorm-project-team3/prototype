@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GooRoom - 회원가입</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h1>회원가입</h1>
+      <p class="subtitle">GooRoom 계정을 만드세요</p>
+      
+      <form onsubmit="event.preventDefault(); location.href='index.html';">
+        <div class="form-group">
+          <label>이름</label>
+          <input type="text" placeholder="홍길동">
+        </div>
+        
+        <div class="form-group">
+          <label>이메일</label>
+          <input type="email" placeholder="name@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label>비밀번호</label>
+          <input type="password" placeholder="8자 이상">
+        </div>
+        
+        <div class="form-group">
+          <label>비밀번호 확인</label>
+          <input type="password" placeholder="비밀번호를 다시 입력하세요">
+        </div>
+        
+        <div class="form-group">
+          <label>역할</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="role" value="owner" checked>
+              <span>강사 (Owner)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="role" value="user">
+              <span>학생 (User)</span>
+            </label>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn-primary">회원가입</button>
+      </form>
+      
+      <div class="auth-footer">
+        이미 계정이 있으신가요? <a href="index.html">로그인</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
