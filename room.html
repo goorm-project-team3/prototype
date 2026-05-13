@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GooRoom — React 심화 스터디</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ide-layout">
+    <header class="ide-topbar">
+      <div class="room-title">GooRoom — React 심화 스터디</div>
+      <div class="topbar-actions">
+        <div class="member-avatars">
+          <div class="avatar" style="background: #3174dc;">김</div>
+          <div class="avatar" style="background: #3fb950;">박</div>
+          <div class="avatar" style="background: #d29922;">이</div>
+          <div class="avatar" style="background: #a371f7;">최</div>
+          <div class="avatar" style="background: var(--v-surface-hover); font-size: 9px;">+8</div>
+        </div>
+        <button class="focus-toggle active">▶ FOCUS ON</button>
+        <span style="color: var(--v-text-muted); cursor: pointer; font-size: 16px;">⚙</span>
+      </div>
+    </header>
+    
+    <div class="ide-body">
+      <nav class="activity-bar">
+        <div class="activity-item active" data-sidebar-target="explorer" title="탐색기">📁</div>
+        <div class="activity-item" data-sidebar-target="members" title="멤버">👥</div>
+        <div style="flex: 1;"></div>
+        <div class="activity-item" title="설정">⚙</div>
+      </nav>
+      
+      <aside class="sidebar">
+        <div class="sidebar-header" id="sidebar-header">탐색기</div>
+        <div class="sidebar-content">
+          <div class="sidebar-pane active" data-sidebar="explorer">
+            <ul class="file-tree">
+              <li class="folder">src/</li>
+              <li class="active"><span class="icon">📄</span> App.tsx</li>
+              <li><span class="icon">📄</span> index.tsx</li>
+              <li class="folder">public/</li>
+              <li><span class="icon">📄</span> index.html</li>
+              <li><span class="icon">📄</span> styles.css</li>
+              <li class="folder">components/</li>
+              <li class="folder">hooks/</li>
+            </ul>
+          </div>
+          <div class="sidebar-pane" data-sidebar="members">
+            <div class="member-list-item">
+              <div class="member-avatar" style="background: #3174dc;">김</div>
+              <div class="member-name">김강사</div>
+              <div class="member-status">● Owner</div>
+            </div>
+            <div class="member-list-item">
+              <div class="member-avatar" style="background: #3fb950;">박</div>
+              <div class="member-name">박학생</div>
+              <div class="member-status">● 온라인</div>
+            </div>
+            <div class="member-list-item">
+              <div class="member-avatar" style="background: #d29922;">이</div>
+              <div class="member-name">이학생</div>
+              <div class="member-status">● 온라인</div>
+            </div>
+            <div class="member-list-item">
+              <div class="member-avatar" style="background: #a371f7;">최</div>
+              <div class="member-name">최학생</div>
+              <div class="member-status">● 온라인</div>
+            </div>
+            <div class="member-list-item">
+              <div class="member-avatar" style="background: #f85149;">한</div>
+              <div class="member-name">한학생</div>
+              <div class="member-status" style="color: var(--v-text-dim);">○ 오프라인</div>
+            </div>
+            <div class="member-list-item">
+              <div class="member-avatar" style="background: #58a6ff;">윤</div>
+              <div class="member-name">윤학생</div>
+              <div class="member-status">● 온라인</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      
+      <section class="editor-area">
+        <div class="editor-tabs">
+          <div class="editor-tab active">📄 App.tsx <span class="close">×</span></div>
+          <div class="editor-tab">📄 index.tsx <span class="close">×</span></div>
+          <div class="editor-tab">📄 styles.css <span class="close">×</span></div>
+        </div>
+        <div class="code-editor">
+          <div class="line"><span class="line-num">1</span><span class="line-content"><span style="color: #6a9955;">// GooRoom — 강사 Kim 커서포인트</span></span></div>
+          <div class="line"><span class="line-num">2</span><span class="line-content"><span style="color: #c586c0;">import</span> React, { <span style="color: #9cdcfe;">useState</span> } <span style="color: #c586c0;">from</span> <span style="color: #ce9178;">'react'</span>;</span></div>
+          <div class="line"><span class="line-num">3</span><span class="line-content"></span></div>
+          <div class="line"><span class="line-num">4</span><span class="line-content"><span style="color: #c586c0;">interface</span> <span style="color: #4ec9b0;">Props</span> {</span></div>
+          <div class="line"><span class="line-num">5</span><span class="line-content">  <span style="color: #9cdcfe;">lectureId</span>: <span style="color: #4ec9b0;">string</span>;</span></div>
+          <div class="line"><span class="line-num">6</span><span class="line-content">  <span style="color: #9cdcfe;">isOwner</span>: <span style="color: #4ec9b0;">boolean</span>;</span></div>
+          <div class="line"><span class="line-num">7</span><span class="line-content">}</span></div>
+          <div class="line"><span class="line-num">8</span><span class="line-content"></span></div>
+          <div class="line"><span class="line-num">9</span><span class="line-content"><span style="color: #c586c0;">export const</span> <span style="color: #dcdcaa;">LectureRoom</span> = ({ <span style="color: #9cdcfe;">lectureId</span>, <span style="color: #9cdcfe;">isOwner</span> }: <span style="color: #4ec9b0;">Props</span>) => {</span></div>
+          <div class="line"><span class="line-num">10</span><span class="line-content">  <span style="color: #c586c0;">const</span> [<span style="color: #9cdcfe;">focusMode</span>, <span style="color: #9cdcfe;">setFocusMode</span>] = <span style="color: #dcdcaa;">useState</span>(<span style="color: #569cd6;">false</span>);</span></div>
+          <div class="line"><span class="line-num">11</span><span class="line-content"></span></div>
+          <div class="line"><span class="line-num">12</span><span class="line-content">  <span style="color: #c586c0;">return</span> (</span></div>
+          <div class="line"><span class="line-num">13</span><span class="line-content">    &lt;<span style="color: #4ec9b0;">div</span> <span style="color: #9cdcfe;">className</span>=<span style="color: #ce9178;">"room-container"</span>&gt;</span></div>
+          <div class="line"><span class="line-num">14</span><span class="line-content">      <span style="color: #6a9955;">{/* 실시간 협업 에디터 영역 */}</span></span></div>
+          <div class="line"><span class="line-num">15</span><span class="line-content">    &lt;/<span style="color: #4ec9b0;">div</span>&gt;</span></div>
+          <div class="line"><span class="line-num">16</span><span class="line-content">  );</span></div>
+          <div class="line"><span class="line-num">17</span><span class="line-content">};</span></div>
+          <div class="line"><span class="line-num">18</span><span class="line-content"></span></div>
+        </div>
+      </section>
+      
+      <aside class="right-panel">
+        <div class="right-panel-header">채팅</div>
+        <div class="right-panel-content">
+          <div class="chat-messages">
+            <div class="chat-message">
+              <div class="sender">김강사 (Owner)</div>
+              <div class="msg">오늘은 useState 훅에 대해 실습합시다.</div>
+            </div>
+            <div class="chat-message">
+              <div class="sender">박학생</div>
+              <div class="msg">Props 타입 선언 방식이 헷갈리는데 다시 설명해주실 수 있나요?</div>
+            </div>
+            <div class="chat-message">
+              <div class="sender">이학생</div>
+              <div class="msg">focus 모드 켜지면 저희 에디터도 따라가나요?</div>
+            </div>
+            <div class="chat-message">
+              <div class="sender">김강사 (Owner)</div>
+              <div class="msg">네, 포커스 모드 ON이면 Owner 화면을 실시간으로 따라갑니다.</div>
+            </div>
+            <div class="chat-message">
+              <div class="sender">최학생</div>
+              <div class="msg">👍</div>
+            </div>
+          </div>
+          
+          <div class="chat-reactions">
+            <button class="reaction-btn-small">👍</button>
+            <button class="reaction-btn-small">❤️</button>
+            <button class="reaction-btn-small">🎉</button>
+            <button class="reaction-btn-small">🤔</button>
+            <button class="reaction-btn-small">😮</button>
+            <button class="reaction-btn-small">👏</button>
+          </div>
+          
+          <div class="chat-input-area">
+            <input type="text" placeholder="메시지를 입력하세요...">
+            <button class="btn-primary">전송</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+    
+    <div class="resize-handle" id="resize-handle"></div>
+    <div class="bottom-panel" id="bottom-panel">
+      <div class="bottom-panel-header">
+        <span>강의 노트</span>
+        <span style="font-size: 11px; color: var(--v-text-dim); font-weight: 500; text-transform: none; letter-spacing: 0;">강의 중 실시간으로 작성할 수 있습니다</span>
+      </div>
+      <div class="bottom-panel-content">
+        <div class="notes-list">
+          <div class="note-item">
+            <div class="note-title">오늘 실습 목표</div>
+            <div class="note-desc">useState 훅으로 상태 관리 실습. Props 타입 선언 방식 확인 후 컴포넌트 분리 진행 예정.</div>
+          </div>
+          <div class="note-item">
+            <div class="note-title">참고 자료</div>
+            <div class="note-desc">React 공식 문서 — Hooks API Reference</div>
+          </div>
+        </div>
+        <div class="note-editor">
+          <textarea placeholder="여기에 노트를 작성하세요..."></textarea>
+          <button class="btn-primary">노트 추가</button>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="status-bar">
+      <div class="status-left">
+        <span class="status-item online">● WS Connected</span>
+        <span class="status-item">User</span>
+        <span class="status-item focus-on">▶ FOCUS ON</span>
+      </div>
+      <div class="status-right">
+        <span class="status-item">UTF-8</span>
+        <span class="status-item">TypeScript</span>
+        <span class="status-item">줄 18, 열 1</span>
+        <span class="status-item">스페이스: 2</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.activity-item[data-sidebar-target]').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.activity-item[data-sidebar-target]').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        
+        const target = item.dataset.sidebarTarget;
+        document.getElementById('sidebar-header').textContent = target === 'explorer' ? '탐색기' : '멤버';
+        document.querySelectorAll('.sidebar-pane').forEach(pane => {
+          pane.classList.toggle('active', pane.dataset.sidebar === target);
+        });
+      });
+    });
+
+    const handle = document.getElementById('resize-handle');
+    const panel = document.getElementById('bottom-panel');
+    let isResizing = false;
+
+    handle.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      document.body.style.cursor = 'row-resize';
+      document.body.style.userSelect = 'none';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      const statusBarHeight = 28;
+      const newHeight = window.innerHeight - e.clientY - statusBarHeight;
+      if (newHeight >= 120 && newHeight <= 420) {
+        panel.style.height = newHeight + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (isResizing) {
+        isResizing = false;
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+      }
+    });
+  </script>
+</body>
+</html>
