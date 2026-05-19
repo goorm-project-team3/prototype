@@ -1,4 +1,5 @@
 # 3팀 기획안 — GooR(oo)M
+[프로토타이핑](https://goorm-project-team3.github.io/prototype/)
 
 ## 1. 프로젝트 개요
 
